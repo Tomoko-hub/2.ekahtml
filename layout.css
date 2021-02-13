@@ -1,0 +1,57 @@
+
+html {
+    font-size: 62.5%; /* 16px x 62.5% = 10px */
+}
+body {
+    font-family: 'Crimson Text', serif;
+    padding: 1rem;
+}
+h1 {
+    font-family: 'Vollkorn', serif;
+    font-size: 2rem;
+}
+p {
+    font-size: 1.3rem;
+}
+/* Mää ritellään responsiivinen kuva
+figure {
+
+}resetissä määritelty display:block! Oltava se ja max-width img:ssä*/
+
+figure img {
+    max-width: 100%;
+}
+
+figcaption {
+    font-style: italic
+}
+
+/* lisätään sivun pääelementtien väliin tilaa 10px */
+h1, p, figure {
+    margin-bottom: 1rem;
+}
+body > * { /* body elementin välittömät lapset */
+    margin-bottom: 1rem;
+}
+/* logot figure-tageissä allekkain
+.parent {
+
+}*/
+
+/*.parent > * {  .parent elementin välittömät lapset
+
+}*/
+
+/* Mobiilia suuremmat näytöt */
+@media only screen and (min-width: 426px) {
+    /* logot figure-tageissa rinnakkain*/
+    .parent {
+        display: flex; /* flex käyttöön .parent-elementin lapsille */
+        flex-direction: row; /* .parent-elementin lapset rinnakkain */
+        flex-wrap: nowrap; /* ...lapset pysyvät yhdellärivillä */
+    }
+    .parent > * { /* .parent elementin välittömat lapset*/
+        flex-grow: 1; /* lapset yhtä leveitä */
+        flex-basis: 0; /* lapsien minimileveys */
+    }
+}
